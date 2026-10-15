@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深圳奶龙大学</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #FFF5F5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+    color: #8B0000;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .links a, .links button {
+    display: block;
+    padding: 16px 24px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .links a:hover, .links button:hover {
+    background: #8B0000;
+    color: #fff;
+    border-color: #8B0000;
+  }
+
+  /* 弹窗 */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .modal.show {
+    display: flex;
+  }
+
+  .modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+  }
+
+  .modal-content h3 {
+    color: #8B0000;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .modal-content img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 16px;
+  }
+
+  .modal-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .close-btn {
+    padding: 10px 30px;
+    background: #8B0000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>深圳奶龙大学</h1>
+
+<div class="links">
+  <a href="https://moon-ke.github.io/langjian-knowledge-2026/">奶龙入口</a>
+  <a href="https://www.szu.edu.cn">深圳大学官网</a>
+  <a href="https://jwb.szu.edu.cn">教务处</a>
+  <a href="https://xsb.szu.edu.cn">学生处</a>
+  <a href="https://www.lib.szu.edu.cn">图书馆</a>
+  <a href="https://ehall.szu.edu.cn">网上办事大厅</a>
+  <button onclick="showModal()">加入深大社区</button>
+</div>
+
+<div class="modal" id="qrModal">
+  <div class="modal-content">
+    <h3>扫码加入深大社区</h3>
+    <img src="https://aka.doubaocdn.com/s/BctU7du6Mw" alt="微信群二维码">
+    <p>微信扫码加入社区</p>
+    <button class="close-btn" onclick="hideModal()">关闭</button>
+  </div>
+</div>
+
+<script>
+function showModal() {
+  document.getElementById('qrModal').classList.add('show');
+}
+function hideModal() {
+  document.getElementById('qrModal').classList.remove('show');
+}
+document.getElementById('qrModal').addEventListener('click', function(e) {
+  if (e.target === this) hideModal();
+});
+</script>
+
+</body>
+</html>
